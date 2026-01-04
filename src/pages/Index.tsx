@@ -41,54 +41,80 @@ export default function Index() {
       case 'home':
         return (
           <div className="space-y-16">
-            <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/20 to-accent/10 animate-fade-in" />
-              <div className="absolute top-20 left-10 w-64 h-64 bg-secondary/30 rounded-full blur-3xl animate-pulse" />
-              <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-pulse delay-1000" />
+            <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+              <div className="absolute inset-0 bg-secondary/30" />
               
-              <div className="relative z-10 max-w-4xl mx-auto text-center px-6 animate-slide-up">
-                <Badge className="mb-6 text-sm px-6 py-2 bg-accent/90 hover:bg-accent">
-                  Платформа нового поколения
-                </Badge>
-                <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                  Online Методист
-                </h1>
-                <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                  Современная образовательная платформа для обучения и методического сопровождения
-                </p>
-                <div className="flex gap-4 justify-center flex-wrap">
-                  <Button size="lg" className="text-lg px-8 py-6 hover:scale-105 transition-transform">
-                    <Icon name="Rocket" className="mr-2" size={20} />
-                    Начать обучение
-                  </Button>
-                  <Button size="lg" variant="outline" className="text-lg px-8 py-6 hover:scale-105 transition-transform">
-                    <Icon name="BookOpen" className="mr-2" size={20} />
-                    Узнать больше
-                  </Button>
+              <div className="container mx-auto px-6">
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                  <div className="relative z-10 animate-slide-up">
+                    <Badge className="mb-6 text-sm px-6 py-2 bg-accent hover:bg-accent/90">
+                      Платформа нового поколения
+                    </Badge>
+                    <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
+                      Online Методист
+                    </h1>
+                    <p className="text-lg md:text-xl text-muted-foreground mb-8">
+                      Современная образовательная платформа для обучения и методического сопровождения
+                    </p>
+                    <div className="flex gap-4 flex-wrap">
+                      <Button size="lg" className="text-lg px-8 py-6 hover:scale-105 transition-transform">
+                        <Icon name="Rocket" className="mr-2" size={20} />
+                        Начать обучение
+                      </Button>
+                      <Button size="lg" variant="outline" className="text-lg px-8 py-6 hover:scale-105 transition-transform border-2">
+                        <Icon name="BookOpen" className="mr-2" size={20} />
+                        Узнать больше
+                      </Button>
+                    </div>
+                  </div>
+                  
+                  <div className="relative animate-fade-in">
+                    <img 
+                      src="https://cdn.poehali.dev/projects/c34c982a-d1c7-408c-81af-f078146dd9ef/files/469c8a60-eb31-46a8-bfa5-caa691f194b6.jpg" 
+                      alt="Образовательная платформа"
+                      className="w-full h-auto rounded-2xl shadow-2xl"
+                    />
+                  </div>
                 </div>
               </div>
             </section>
 
-            <section className="max-w-6xl mx-auto px-6">
-              <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in">
-                Возможности платформы
-              </h2>
-              <div className="grid md:grid-cols-3 gap-8">
-                {[
-                  { icon: 'Lightbulb', title: 'Инновационные методы', desc: 'Современные подходы к обучению' },
-                  { icon: 'Users', title: 'Сообщество', desc: 'Общение с коллегами и экспертами' },
-                  { icon: 'Award', title: 'Сертификация', desc: 'Подтверждение компетенций' },
-                ].map((feature, i) => (
-                  <Card key={i} className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 hover:border-accent/50 animate-fade-in" style={{ animationDelay: `${i * 100}ms` }}>
-                    <CardContent className="p-8 text-center">
-                      <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform">
-                        <Icon name={feature.icon as any} className="text-white" size={32} />
-                      </div>
-                      <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                      <p className="text-muted-foreground">{feature.desc}</p>
-                    </CardContent>
-                  </Card>
-                ))}
+            <section className="bg-secondary/50 py-20">
+              <div className="max-w-6xl mx-auto px-6">
+                <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+                  <div className="order-2 md:order-1">
+                    <img 
+                      src="https://cdn.poehali.dev/projects/c34c982a-d1c7-408c-81af-f078146dd9ef/files/760ecc46-2fca-4058-b25e-922807b6d5bb.jpg" 
+                      alt="Методические материалы"
+                      className="w-full h-auto rounded-2xl shadow-xl"
+                    />
+                  </div>
+                  <div className="order-1 md:order-2">
+                    <h2 className="text-4xl font-bold mb-6">
+                      Возможности платформы
+                    </h2>
+                    <p className="text-lg text-muted-foreground mb-8">
+                      Набор инструментов для эффективного обучения и профессионального развития педагогов
+                    </p>
+                    <div className="space-y-4">
+                      {[
+                        { icon: 'Lightbulb', title: 'Инновационные методы', desc: 'Современные подходы к обучению' },
+                        { icon: 'Users', title: 'Сообщество', desc: 'Общение с коллегами и экспертами' },
+                        { icon: 'Award', title: 'Сертификация', desc: 'Подтверждение компетенций' },
+                      ].map((feature, i) => (
+                        <div key={i} className="flex gap-4 items-start animate-fade-in" style={{ animationDelay: `${i * 100}ms` }}>
+                          <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center flex-shrink-0">
+                            <Icon name={feature.icon as any} className="text-white" size={24} />
+                          </div>
+                          <div>
+                            <h3 className="text-lg font-bold mb-1">{feature.title}</h3>
+                            <p className="text-muted-foreground">{feature.desc}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
           </div>
@@ -133,27 +159,46 @@ export default function Index() {
 
       case 'about':
         return (
-          <div className="max-w-4xl mx-auto px-6 py-12">
-            <h2 className="text-5xl font-bold mb-8 animate-fade-in">О платформе</h2>
-            <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground animate-slide-up">
-              <p className="text-xl leading-relaxed">
-                Online Методист — это современная образовательная платформа, созданная для профессионального развития педагогов и методистов.
-              </p>
-              <p className="text-lg leading-relaxed">
-                Мы объединяем лучшие практики, инновационные методики и активное сообщество специалистов, которые стремятся к постоянному развитию и обмену опытом.
-              </p>
-              <div className="grid md:grid-cols-2 gap-6 mt-12">
-                {[
-                  { number: '500+', label: 'Пользователей' },
-                  { number: '200+', label: 'Материалов' },
-                  { number: '50+', label: 'Экспертов' },
-                  { number: '98%', label: 'Удовлетворённость' },
-                ].map((stat, i) => (
-                  <Card key={i} className="text-center p-8 hover:shadow-xl transition-shadow animate-scale-in" style={{ animationDelay: `${i * 100}ms` }}>
-                    <div className="text-4xl font-bold text-accent mb-2">{stat.number}</div>
-                    <div className="text-muted-foreground">{stat.label}</div>
-                  </Card>
-                ))}
+          <div className="space-y-16 py-12">
+            <div className="max-w-6xl mx-auto px-6">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h2 className="text-5xl font-bold mb-8 animate-fade-in">О платформе</h2>
+                  <div className="prose prose-lg max-w-none space-y-6 text-muted-foreground animate-slide-up">
+                    <p className="text-xl leading-relaxed">
+                      Online Методист — это современная образовательная платформа, созданная для профессионального развития педагогов и методистов.
+                    </p>
+                    <p className="text-lg leading-relaxed">
+                      Мы объединяем лучшие практики, инновационные методики и активное сообщество специалистов, которые стремятся к постоянному развитию и обмену опытом.
+                    </p>
+                  </div>
+                </div>
+                <div className="animate-fade-in">
+                  <img 
+                    src="https://cdn.poehali.dev/projects/c34c982a-d1c7-408c-81af-f078146dd9ef/files/118b1c78-1535-4e6b-9827-f9a0963a3c39.jpg" 
+                    alt="Сообщество педагогов"
+                    className="w-full h-auto rounded-2xl shadow-xl"
+                  />
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-secondary/50 py-16">
+              <div className="max-w-6xl mx-auto px-6">
+                <h3 className="text-3xl font-bold text-center mb-12">Платформа в цифрах</h3>
+                <div className="grid md:grid-cols-4 gap-6">
+                  {[
+                    { number: '500+', label: 'Пользователей' },
+                    { number: '200+', label: 'Материалов' },
+                    { number: '50+', label: 'Экспертов' },
+                    { number: '98%', label: 'Удовлетворённость' },
+                  ].map((stat, i) => (
+                    <Card key={i} className="text-center p-8 hover:shadow-xl transition-shadow animate-scale-in" style={{ animationDelay: `${i * 100}ms` }}>
+                      <div className="text-4xl font-bold text-accent mb-2">{stat.number}</div>
+                      <div className="text-muted-foreground">{stat.label}</div>
+                    </Card>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
